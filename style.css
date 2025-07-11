@@ -1,0 +1,87 @@
+/* Base styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+/* Parent container styling */
+#parent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    background-color: #f3e2e2;
+    padding: 20px;
+    margin: auto;
+    border: 1px solid #ec4141;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Paragraph container styling */
+#para {
+    background-color: #c3c9b9;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    gap: 10px; /* Space between paragraphs */
+}
+
+/* Paragraph styling */
+#para p {
+    margin: 0; /* Remove default margin */
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #eaeaea; /* Light background for paragraphs */
+    flex: 1; /* Allow paragraphs to grow equally */
+    text-align: center; /* Center text */
+}
+
+/* Button styling */
+.btn {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+}
+
+#themeToggle {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+#themeToggle:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Dark Mode Styles */
+.dark_mode {
+    background-color: #222;
+    color: white;
+}
+
+.dark_mode #parent {
+    background-color: #333;
+    border-color: #555;
+}
+
+.dark_mode #para {
+    background-color: #444;
+}
+
+.dark_mode #para p {
+    background-color: #555; /* Darker background for paragraphs in dark mode */
+}
+
+/* Light Mode Styles */
+.light_mode {
+    background-color: white;
+    color: black;
+}

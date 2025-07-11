@@ -1,0 +1,114 @@
+    body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f7fa;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .selection-screen, .quiz-screen, .results-screen {
+            text-align: center;
+        }
+        .difficulty-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .easy-btn {
+            background-color: #2ecc71;
+            color: white;
+        }
+        .medium-btn {
+            background-color: #f39c12;
+            color: white;
+        }
+        .hard-btn {
+            background-color: #e74c3c;
+            color: white;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: #34495e;
+        }
+        .options {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .option {
+            padding: 15px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .option:hover {
+            background-color: #d6eaf8;
+        }
+        .selected {
+            background-color: #3498db;
+            color: white;
+        }
+        .correct {
+            background-color: #2ecc71;
+            color: white;
+        }
+        .incorrect {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .progress {
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #7f8c8d;
+        }
+        .next-btn {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 30px;
+        }
+        .results-screen h2 {
+            color: #2c3e50;
+        }
+        .score {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            color: #27ae60;
+        }
+        .restart-btn {
+            background-color: #9b59b6;
+            color: white;
+        }
+        .hidden {
+            display: none;
+        }
+        .loading {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin: 40px 0;
+        }

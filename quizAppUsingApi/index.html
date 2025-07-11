@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App with Difficulty Levels</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz Challenge</h1>
+        
+        <!-- Selection Screen -->
+        <div id="selection-screen" class="selection-screen">
+            <h2>Select Difficulty Level</h2>
+            <div class="difficulty-buttons">
+                <button id="easy-btn" class="easy-btn">Easy</button>
+                <button id="medium-btn" class="medium-btn">Medium</button>
+                <button id="hard-btn" class="hard-btn">Hard</button>
+            </div>
+        </div>
+        
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="hidden">
+            <div class="loading">Preparing your quiz questions...</div>
+        </div>
+        
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="quiz-screen hidden">
+            <div class="progress">Question <span id="current-question">1</span> of 10</div>
+            <div id="question" class="question"></div>
+            <div id="options" class="options"></div>
+            <button id="next-btn" class="next-btn hidden">Next Question</button>
+        </div>
+        
+        <!-- Results Screen -->
+        <div id="results-screen" class="results-screen hidden">
+            <h2>Quiz Completed!</h2>
+            <div class="score">Your Score: <span id="score">0</span>/10</div>
+            <button id="restart-btn" class="restart-btn">Start New Quiz</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
