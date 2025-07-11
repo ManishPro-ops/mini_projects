@@ -1,0 +1,10 @@
+.button{
+    height:50px;
+    width: 50px;
+    margin:5px 15px;
+    background-color: rgb(138, 173, 134); 
+    mix-blend-mode:normal;
+    border: 1px solid rgb(220, 124, 124);
+    border-radius: 2px;
+    z-index: 10;
+}

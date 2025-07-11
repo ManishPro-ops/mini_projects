@@ -1,0 +1,11 @@
+.foodname{
+    background-color: rgb(97, 247, 197);
+    margin:0 50px ;
+    text-align: left;
+}
+.btn{
+    float: right;
+    height: 40px;
+    text-align: center;
+    height: 30px;
+}
