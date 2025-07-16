@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Sidebar = ({selectedtab,setSelectedtab}) => {
+const Sidebar = () => {
   return (
     <div>
       <div
@@ -23,13 +24,9 @@ const Sidebar = ({selectedtab,setSelectedtab}) => {
         </a>
         <hr />
         <ul className="nav nav-pills flex-column mb-auto">
-          <li
-            onClick={() => {
-            setSelectedtab("Home");
-            }}
-          >
-            <a
-              href="#" className={`nav-link text-white ${selectedtab==="Home" && "active"}`}
+          <li>
+            <Link
+              to="/" className={`nav-link text-white`}
               aria-current="page"
             >
               <svg
@@ -41,14 +38,10 @@ const Sidebar = ({selectedtab,setSelectedtab}) => {
                 <use xlinkHref="#home"></use>
               </svg>
               Home
-            </a>
+            </Link>
           </li>
-          <li
-            onClick={() => {
-              setSelectedtab("CreatePost");
-            }}
-          >
-            <a href="#" className={`nav-link text-white  ${selectedtab==="CreatePost" && "active"}`}>
+          <li>
+            <Link to="/create-post" className={`nav-link text-white`}>
               <svg
                 className="bi pe-none me-2"
                 width="16"
@@ -58,7 +51,7 @@ const Sidebar = ({selectedtab,setSelectedtab}) => {
                 <use xlinkHref="#speedometer2"></use>
               </svg>
               CreatePost
-            </a>
+            </Link>
           </li>
         </ul>
         <hr />
@@ -76,7 +69,6 @@ const Sidebar = ({selectedtab,setSelectedtab}) => {
               height="32"
               className="rounded-circle me-2"
             />
-            <strong>mdo</strong>
           </a>
           <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
             <li>

@@ -1,30 +1,48 @@
 import React, { useContext, useRef } from "react";
 import { PostList } from "../store/post-list-store";
+import { useNavigate } from "react-router-dom";
 
 const CreatePost = () => {
-  const {addPost}=useContext(PostList);
-  const userIdElement=useRef();
-  const postTitleElement=useRef();
-  const postBodyElement=useRef();
-  const reactionsElement=useRef();
-  const tagsElement=useRef();
+  const { addPost } = useContext(PostList);
+  const userIdElement = useRef();
+  const postTitleElement = useRef();
+  const postBodyElement = useRef();
+  const reactionsElement = useRef();
+  const tagsElement = useRef();
 
-  const handleSubmit=(event)=>{
+  const navigate=useNavigate()
+
+  const handleSubmit = (event) => {
     event.preventDefault();
-    const userId=userIdElement.current.value;
-    const postTitle=postTitleElement.current.value;
-    const postBody=postBodyElement.current.value;
-    const reactions=reactionsElement.current.value;
-    const tags=tagsElement.current.value.split(" ");
+    const userId = userIdElement.current.value;
+    const postTitle = postTitleElement.current.value;
+    const postBody = postBodyElement.current.value;
+    const reactions = reactionsElement.current.value;
+    const tags = tagsElement.current.value.split(" ");
 
-    userIdElement.current.value="";
-    postTitleElement.current.value="";
-    postBodyElement.current.value="";
-    reactionsElement.current.value="";
-    tagsElement.current.value="";
-    addPost(userId,postTitle,postBody,reactions,tags);
+    userIdElement.current.value = "";
+    postTitleElement.current.value = "";
+    postBodyElement.current.value = "";
+    reactionsElement.current.value = "";
+    tagsElement.current.value = "";
 
-  }
+    fetch("https://dummyjson.com/posts/add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: postTitle,
+        body: postBody,
+        reactions: reactions,
+        userId: userId,
+        tags: tags,
+      }),
+    })
+      .then((res) => res.json())
+      .then((post) => {
+        addPost(post);
+        navigate("/");
+      })
+  };
 
   return (
     <div>
@@ -60,8 +78,8 @@ const CreatePost = () => {
             Post Content
           </label>
           <textarea
-          ref={postBodyElement}
-          rows='4'
+            ref={postBodyElement}
+            rows="4"
             type="email"
             className="form-control"
             id="content"
@@ -74,7 +92,7 @@ const CreatePost = () => {
             No of reactions
           </label>
           <textarea
-          ref={reactionsElement}
+            ref={reactionsElement}
             type="text"
             className="form-control"
             id="reactions"
@@ -87,7 +105,7 @@ const CreatePost = () => {
             Mention Hashtags
           </label>
           <input
-          ref={tagsElement}
+            ref={tagsElement}
             type="text"
             className="form-control"
             id="tags"
